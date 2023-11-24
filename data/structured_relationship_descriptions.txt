@@ -1,0 +1,603 @@
+Relation-name: DGIDB::ACTIVATOR::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: activation
+Description: An activator interaction is when a drug activates a biological response from a target, although the mechanism by which it does so may not be understood.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::AGONIST::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: agonism
+Description: An agonist interaction occurs when a drug binds to a target receptor and activates the receptor to produce a biological response.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::ALLOSTERIC MODULATOR::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: allosteric modulation
+Description: An allosteric modulator interaction occurs when drugs exert their effects on their protein targets via a different binding site than the natural (orthosteric) ligand site.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::ANTAGONIST::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: antagonism
+Description: An antagonist interaction occurs when a drug blocks or dampens agonist-mediated responses rather than provoking a biological response itself upon binding to a target receptor.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::ANTIBODY::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: antibody
+Description: An antibody interaction occurs when an antibody drug specifically binds the target molecule.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::BINDER::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: binding
+Description: A binder interaction has drugs physically binding to their target.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::BLOCKER::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: blocking
+Description: Antagonist interactions are sometimes referred to as blocker interactions; examples include alpha blockers, beta blockers, and calcium channel blockers.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::CHANNEL BLOCKER::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: channel blocking
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::INHIBITOR::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: inhibition
+Description: In inhibitor interactions, the drug binds to a target and decreases its expression or activity. Most interactions of this class are enzyme inhibitors, which bind an enzyme to reduce enzyme activity.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::MODULATOR::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: modulation
+Description: In modulator interactions, the drug regulates or changes the activity of its target. In contrast to allosteric modulators, this interaction type may not involve any direct binding to the target.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::OTHER::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: other
+Description: This is a label given by the reporting source to an interaction that doesn't belong to other interaction types, as defined by the reporting source.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::PARTIAL AGONIST::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: partial agonism
+Description: In a partial antagonist interaction, a drug will only partially reduce the amplitude of a functional response at its target receptor, as compared to the reduction of response by a full antagonist.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DGIDB::POSITIVE ALLOSTERIC MODULATOR::Gene:Compound
+Data-source: DGIDB
+Connected entity-types: Compound:Gene
+Interaction-type: positive allosteric modulation
+Description: In a positive allosteric modulator interaction, the drug increases activity of the target enzyme.
+Reference for the description: http://www.dgidb.org/getting_started
+
+Relation-name: DRUGBANK::carrier::Compound:Gene
+Data-source: DRUGBANK
+Connected entity-types: Compound:Gene
+Interaction-type: carrier
+Description: Gene acts as a carrier which binds to a drug and modifies its pharmacokinetics.
+Reference for the description: https://dev.drugbankplus.com/guides/terms/carrier
+
+Relation-name: DRUGBANK::ddi-interactor-in::Compound:Compound
+Data-source: DRUGBANK
+Connected entity-types: Compound:Compound
+Interaction-type: drug-drug interaction
+Description: In DrugBank, this relation refers to a change in a drug's effect on the body when the drug is taken with other drugs.
+Reference for the description: https://dev.drugbankplus.com/guides/terms/drug-interaction
+
+Relation-name: DRUGBANK::enzyme::Compound:Gene
+Data-source: DRUGBANK
+Connected entity-types: Compound:Gene
+Interaction-type: enzyme
+Description: Gene acts as an enzyme that facilitates the occurrence of a metabolic reaction by interacting with and transforming a drug or chemical to one or more specific metabolites.
+Reference for the description: https://dev.drugbankplus.com/guides/terms/enzyme
+
+Relation-name: DRUGBANK::target::Compound:Gene
+Data-source: DRUGBANK
+Connected entity-types: Compound:Gene
+Interaction-type: target
+Description: The drug binds or otherwise interacts with the gene, resulting in an alteration of the normal function of the bound molecule and desirable therapeutic effects or unwanted adverse effects.
+Reference for the description: https://dev.drugbankplus.com/guides/terms/target
+
+Relation-name: DRUGBANK::x-atc::Compound:Atc
+Data-source: DRUGBANK
+Connected entity-types: ATC:Compound
+Interaction-type: Compound belongs to Anatomical Therapeutic Chemical (ATC) code.
+Description: We extend the hierarchical ATC classification information of drugs from their corresponding ATC codes and connect entities representing each level of ATC into certain drugs.
+
+Relation-name: DRUGBANK::treats::Compound:Disease
+Data-source: DRUGBANK
+Connected entity-types: Compound:Disease
+Interaction-type: Compound treats the disease
+Description: We extract  the  associated  conditions  related  to  compound entities in the drugbank.
+
+Relation-name: GNBR::A+::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: agonism, activation
+
+Relation-name: GNBR::A-::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: antagonism, blocking
+
+Relation-name: GNBR::B::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: binding, ligand (esp. receptors)
+
+Relation-name: GNBR::B::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: binding, ligand (esp. receptors)
+
+Relation-name: GNBR::C::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: inhibits cell growth (esp. cancers)
+
+Relation-name: GNBR::D::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: drug targets
+
+Relation-name: GNBR::E+::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: increases expression/production
+
+Relation-name: GNBR::E+::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: increases expression/production
+
+Relation-name: GNBR::E-::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: decreases expression/production
+
+Relation-name: GNBR::E::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: affects expression/production (neutral)
+
+Relation-name: GNBR::E::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: affects expression/production (neutral)
+
+Relation-name: GNBR::G::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: promotes progression
+
+Relation-name: GNBR::H::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: same protein or complex
+
+Relation-name: GNBR::I::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: signaling pathway
+
+Relation-name: GNBR::J::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: role in disease pathogenesis
+
+Relation-name: GNBR::J::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: role in pathogenesis
+
+Relation-name: GNBR::K::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: metabolism, pharmacokinetics
+
+Relation-name: GNBR::L::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: improper regulation linked to disease
+
+Relation-name: GNBR::Md::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: biomarkers (diagnostic)
+
+Relation-name: GNBR::Mp::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: biomarkers (of disease progression)
+
+Relation-name: GNBR::N::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: inhibits
+
+Relation-name: GNBR::O::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: transport, channels
+
+Relation-name: GNBR::Pa::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: alleviates, reduces
+
+Relation-name: GNBR::Pr::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: prevents, suppresses
+
+Relation-name: GNBR::Q::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: production by cell population
+
+Relation-name: GNBR::Rg::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: regulation
+
+Relation-name: GNBR::Sa::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: side effect/adverse event
+
+Relation-name: GNBR::T::Compound:Disease
+Data-source: GNBR
+Connected entity-types: Compound:Disease
+Interaction-type: treatment/therapy (including investigatory)
+
+Relation-name: GNBR::Te::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: possible therapeutic effect
+
+Relation-name: GNBR::U::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: causal mutations
+
+Relation-name: GNBR::Ud::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: mutations affecting disease course
+
+Relation-name: GNBR::V+::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: activates, stimulates
+
+Relation-name: GNBR::W::Gene:Gene
+Data-source: GNBR
+Connected entity-types: Gene:Gene
+Interaction-type: enhances response
+
+Relation-name: GNBR::X::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: overexpression in disease
+
+Relation-name: GNBR::Y::Gene:Disease
+Data-source: GNBR
+Connected entity-types: Disease:Gene
+Interaction-type: polymorphisms alter risk
+
+Relation-name: GNBR::Z::Compound:Gene
+Data-source: GNBR
+Connected entity-types: Compound:Gene
+Interaction-type: enzyme activity
+
+Relation-name: GNBR::in_tax::Gene:Tax
+Data-source: GNBR
+Connected entity-types: Gene:Tax
+Interaction-type: gene belongs to taxonomy
+
+Relation-name: Hetionet::AdG::Anatomy:Gene
+Data-source: HETIONET
+Connected entity-types: Anatomy:Gene
+Interaction-type: downregulatation
+
+Relation-name: Hetionet::AeG::Anatomy:Gene
+Data-source: HETIONET
+Connected entity-types: Anatomy:Gene
+Interaction-type: expression
+
+Relation-name: Hetionet::AuG::Anatomy:Gene
+Data-source: HETIONET
+Connected entity-types: Anatomy:Gene
+Interaction-type: upregulation
+
+Relation-name: Hetionet::CbG::Compound:Gene
+Data-source: HETIONET
+Connected entity-types: Compound:Gene
+Interaction-type: binding
+
+Relation-name: Hetionet::CcSE::Compound:Side Effect
+Data-source: HETIONET
+Connected entity-types: Compound:Side Effect
+Interaction-type: causes
+
+Relation-name: Hetionet::CdG::Compound:Gene
+Data-source: HETIONET
+Connected entity-types: Compound:Gene
+Interaction-type: downregulation
+
+Relation-name: Hetionet::CpD::Compound:Disease
+Data-source: HETIONET
+Connected entity-types: Compound:Disease
+Interaction-type: palliation
+
+Relation-name: Hetionet::CrC::Compound:Compound
+Data-source: HETIONET
+Connected entity-types: Compound:Compound
+Interaction-type: resemblence
+
+Relation-name: Hetionet::CtD::Compound:Disease
+Data-source: HETIONET
+Connected entity-types: Compound:Disease
+Interaction-type: treatment
+
+Relation-name: Hetionet::CuG::Compound:Gene
+Data-source: HETIONET
+Connected entity-types: Compound:Gene
+Interaction-type: upregulation
+
+Relation-name: Hetionet::DaG::Disease:Gene
+Data-source: HETIONET
+Connected entity-types: Disease:Gene
+Interaction-type: association
+
+Relation-name: Hetionet::DdG::Disease:Gene
+Data-source: HETIONET
+Connected entity-types: Disease:Gene
+Interaction-type: downregulation
+
+Relation-name: Hetionet::DlA::Disease:Anatomy
+Data-source: HETIONET
+Connected entity-types: Anatomy:Disease
+Interaction-type: localization
+
+Relation-name: Hetionet::DpS::Disease:Symptom
+Data-source: HETIONET
+Connected entity-types: Disease:Symptom
+Interaction-type: presents
+
+Relation-name: Hetionet::DrD::Disease:Disease
+Data-source: HETIONET
+Connected entity-types: Diisease:Disease
+Interaction-type: resemblence
+
+Relation-name: Hetionet::DuG::Disease:Gene
+Data-source: HETIONET
+Connected entity-types: Disease:Gene
+Interaction-type: upregulation
+
+Relation-name: Hetionet::GcG::Gene:Gene
+Data-source: HETIONET
+Connected entity-types: Gene:Gene
+Interaction-type: covariation
+
+Relation-name: Hetionet::GiG::Gene:Gene
+Data-source: HETIONET
+Connected entity-types: Gene:Gene
+Interaction-type: interaction
+
+Relation-name: Hetionet::GpBP::Gene:Biological Process
+Data-source: HETIONET
+Connected entity-types: Biological Process:Gene
+Interaction-type: participation
+
+Relation-name: Hetionet::GpCC::Gene:Cellular Component
+Data-source: HETIONET
+Connected entity-types: Cellular Component:Gene
+Interaction-type: participation
+
+Relation-name: Hetionet::GpMF::Gene:Molecular Function
+Data-source: HETIONET
+Connected entity-types: Gene:Molecular Function
+Interaction-type: participation
+
+Relation-name: Hetionet::GpPW::Gene:Pathway
+Data-source: HETIONET
+Connected entity-types: Gene:Pathway
+Interaction-type: participation
+
+Relation-name: Hetionet::Gr>G::Gene:Gene
+Data-source: HETIONET
+Connected entity-types: Gene:Gene
+Interaction-type: regulation
+
+Relation-name: Hetionet::PCiC::Pharmacologic Class:Compound
+Data-source: HETIONET
+Connected entity-types: Compound:Pharmacologic Class
+Interaction-type: inclusion
+
+Relation-name: INTACT::ADP RIBOSYLATION REACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: ADP ribosylation reaction
+Description: Involves the addition of one or more ADP-ribose moieties to proteins.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0557
+
+Relation-name: INTACT::ASSOCIATION::Compound:Gene
+Data-source: IntAct
+Connected entity-types: Compound:Gene
+Interaction-type: association
+Description: Interaction between molecules that may participate in formation of one, but possibly more, physical complexes.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0914
+
+Relation-name: INTACT::ASSOCIATION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: association
+Description: Interaction between molecules that may participate in formation of one, but possibly more, physical complexes.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0914
+
+Relation-name: INTACT::CLEAVAGE REACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: cleavage reaction
+Description: Covalent bond breakage in a molecule leading to the formation of smaller molecules.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0194
+
+Relation-name: INTACT::COLOCALIZATION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: colocalization
+Description: Coincident occurrence of molecules in a given subcellular fraction observed with a low resolution methodology from which a physical interaction among those molecules cannot be inferred.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0403
+
+Relation-name: INTACT::DEPHOSPHORYLATION REACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: dephosphorylation reaction
+Description: Phosphoresidues are cleaved and return D,C,H,S,T,Y or R residues.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0203
+
+Relation-name: INTACT::DIRECT INTERACTION::Compound:Gene
+Data-source: IntAct
+Connected entity-types: Compound:Gene
+Interaction-type: direct interation
+Description: Interaction between molecules that are in direct contact with each other.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0407
+
+Relation-name: INTACT::DIRECT INTERACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: direct interation
+Description: Interaction between molecules that are in direct contact with each other.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0407
+
+Relation-name: INTACT::PHOSPHORYLATION REACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: phosphorylation reaction
+Description: Reversible reaction that can affect D,C,H,S,T,Y,R residues.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0217
+
+Relation-name: INTACT::PHYSICAL ASSOCIATION::Compound:Gene
+Data-source: IntAct
+Connected entity-types: Compound:Gene
+Interaction-type: physical association
+Description: Interaction between molecules within the same physical complex.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0915
+
+Relation-name: INTACT::PHYSICAL ASSOCIATION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: physical association
+Description: Interaction between molecules within the same physical complex.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0915
+
+Relation-name: INTACT::PROTEIN CLEAVAGE::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: protein cleavage
+Description: Covalent modification of a polypeptide occuring during its maturation or its proteolytic degradation.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0570
+
+Relation-name: INTACT::UBIQUITINATION REACTION::Gene:Gene
+Data-source: IntAct
+Connected entity-types: Gene:Gene
+Interaction-type: ubiquitination reaction
+Description: Reversible reaction that create a covalent bond between a C-terminus G of ubiquitin and a K residue of the target.
+Reference for the description: https://www.ebi.ac.uk/ols/ontologies/mi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMI_0220
+
+Relation-name: STRING::ACTIVATION::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: activation
+
+Relation-name: STRING::BINDING::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: binding
+
+Relation-name: STRING::CATALYSIS::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: catalysis
+
+Relation-name: STRING::EXPRESSION::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: expression
+
+Relation-name: STRING::INHIBITION::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: inhibition
+
+Relation-name: STRING::OTHER::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: other
+Description: interaction that doesn't belong to other interaction types.
+
+Relation-name: STRING::PTMOD::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: post-translational modification
+Description: Post-translational modification (PTM) refers to the covalent and generally enzymatic modification of proteins following protein biosynthesis.
+Reference for the description: https://en.wikipedia.org/wiki/Post-translational_modification
+
+Relation-name: STRING::REACTION::Gene:Gene
+Data-source: STRING
+Connected entity-types: Gene:Gene
+Interaction-type: reaction
+
+Relation-name: bioarx::Coronavirus_ass_host_gene::Disease:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Disease:Gene
+Interaction-type: interaction
+Description: Interactions between the 6 Covid-19 related  diseases namely IBV, HCoV-229E, HCoV-NL63, SARS, MERS and MHV, and 117 host proteins.
+
+Relation-name: bioarx::Covid2_acc_host_gene::Disease:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Disease:Gene
+Interaction-type: interaction
+Description: Interactions between 27 viral  proteins,  and 332 physically associated human genes.
+
+Relation-name: bioarx::DrugHumGen:Compound:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Compound:Gene
+Interaction-type: interaction
+
+Relation-name: bioarx::DrugVirGen:Compound:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Compound:Gene
+Interaction-type: interaction
+
+Relation-name: bioarx::HumGenHumGen:Gene:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Gene:Gene
+Interaction-type: interaction
+Description: Protein-protein interaction
+
+Relation-name: bioarx::VirGenHumGen:Gene:Gene
+Data-source: BIBLIOGRAPHY
+Connected entity-types: Gene:Gene
+Interaction-type: interaction
+Description: Protein-protein interaction
+
