@@ -1,25 +1,38 @@
-# Exploring Retrieval Augmented Generation (RAG) for Drug Repusposing using LLMs
+# Exploring Retrieval Augmented Generation for Drug Repusposing using LLMs
 
 **Authors:** Fuad Al Abir and Akhil Goparaju
 
-Department of Computer Science, College of Arts and Sciences, University of Alabama at Birmingham, AL 35205, USA
+Department of Computer Science, College of Arts and Sciences, University of Alabama at Birmingham, AL 35205, USA.
 
 
 ## Dataset Description
-We have used the Drug Repurposing Knowledge Graph (DRKG) dataset (https://github.com/gnn4dr/DRKG) for the project. DRKG is a comprehensive biological knowledge graph relating genes, compounds, diseases, biological processes, side effects and symptoms. DRKG includes information from six existing databases including DrugBank, Hetionet, GNBR, String, IntAct and DGIdb. It includes 97,238 entities belonging to 13 entity-types; and 5,874,261 triplets belonging to 107 edge-types. These 107 edge-types show a type of interaction between one of the 17 entity-type pairs (multiple types of interactions are possible between the same entity-pair), as depicted in the figure below.
+We have used the [**Drug Repurposing Knowledge Graph (DRKG)**](https://github.com/gnn4dr/DRKG) dataset for the project. DRKG is a comprehensive biological knowledge graph relating genes, compounds, diseases, biological processes, side effects and symptoms. DRKG includes information from six existing databases including DrugBank, Hetionet, GNBR, String, IntAct and DGIdb. It includes **97,238 entities** belonging to **13 entity-types**; and **5,874,261 triplets** belonging to **107 edge-types**. These 107 edge-types show a type of interaction between one of the 17 entity-type pairs (multiple types of interactions are possible between the same entity-pair), as depicted in the figure below.
 
 ![DRKG relationship diagram](https://raw.githubusercontent.com/gnn4dr/DRKG/master/connectivity.png)
 
 ## Project Objective
 
-To build synergized **[KG-LLM model](https://arxiv.org/pdf/2306.08302.pdf)** that can advance the state-of-the-art drug discovery, our project aimed to build a prototype with **Retrieval Augmented Generation** on **Knowledge Graphs,** harnessing the power of **open-source LLMs**.
+To build **[synergized KG-LLM](https://arxiv.org/pdf/2306.08302.pdf)** that can advance the state-of-the-art drug discovery process, our project aimed to build a prototype with [**Retrieval Augmented Generation (RAG)**](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) on [**Knowledge Graphs (KG)**](https://www.ibm.com/topics/knowledge-graph), harnessing the power of **open-source Large Language Models (LLMs)**.
 
 ## Project Structure
-files: data/ notebook/ imgs/
 
-requirement:
+**Dataset:** There are three key folderes in our project. We kept all our raw and processed datasets in the subdirectories of **`data`** folder. The raw datasets are in the `data/raw` folder, structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively.
 
-compatibility: cheaha
+Furthermore, we have extracted gene related information from the Entrez API which is kept in the **`data/meta`** folder. However, we did not (get the chance to) use any external metadata like this in this project, which can be incorporated in future exploration.
+
+**Notebook:** All the notebooks are located in the **`notebook`** folder.
+
+**Library Requirements**: All the packages and their versions are listed in `requirements.txt`. Run the following command to install all the packages altogether.
+
+
+``` bash
+pip install -r requirements.txt
+```
+
+**Run Instructions:** We have implemented the RAG system using the instruction-tuned **`Writer/camel-5b-hf`** model which approximately requires 25GB of GPU memory for inference. Therefore a **`amperenodes`** from Cheaha with 1 A100 GPU is sufficient.
+
+> [!CAUTION]
+> Our code may not be compatible with multi-gpu nodes from Cheaha.
 
 ## Exploratory Data Analysis
 
@@ -29,11 +42,17 @@ https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sha
 
 ## Retrieval Augmented Generation on Knowledge Graph
 
+### Results
+
 ## Fine-tuning LLM
 
 ## Discussion
 
-- At first, we aimed to implement RAG on Graph a.k.a. Graph RAG. Thus, we have explored graph databases like [neo4j](https://neo4j.com/), [nebula-graph](https://www.nebula-graph.io/), [aws neptune](https://aws.amazon.com/neptune/) and some others that can support Graph RAG. However, the free tier of the technologies are not feasible for our dataset as we have ~0.4M nodes and ~5.8M edges. This feasibility study took apporimately 20 hours of work.
+- At first, we aimed to implement RAG on Graph a.k.a. [**Graph RAG**](https://docs.llamaindex.ai/en/latest/examples/query_engine/knowledge_graph_rag_query_engine.html). Thus, we have explored graph databases like [neo4j](https://neo4j.com/), [nebula-graph](https://www.nebula-graph.io/), [aws neptune](https://aws.amazon.com/neptune/) and some others that can support Graph RAG. However, the free tier of the technologies are *not feasible* for our dataset as we have ~5.8M edges. This feasibility study took apporimately 20 hours of *failed experiments* which is not reported in the project. From that, we have pivoted our aim to use **Document RAG**.
+
+- We have not evaluated the performace of the RAG method with any systemetic evaluation metric that can measure groundedness, context relevance, answer relevance, factualization etc. To do that, we could use the [**RAG Triad method from truera**](https://truera.com/ai-quality-education/generative-ai-rags/how-to-prevent-llms-from-hallucinating/), however, it requires some OpenAI API and Huggingface API costs.
+
+- [**Sentence Window Retrieval**](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) and [**Auto-merging Retrieval**](https://docs.llamaindex.ai/en/latest/examples/retrievers/auto_merging_retriever.html) are two advanced RAG methods that can improve the results. Graph RAG can also be explored with a sub-set of the knowledge graph.
 ## Contributions
 
 - **Background Research and Problem Formulation:** Fuad Al Abir
