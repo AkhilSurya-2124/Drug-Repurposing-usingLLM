@@ -16,9 +16,15 @@ To build **[synergized KG-LLM](https://arxiv.org/pdf/2306.08302.pdf)** that can 
 
 ## Project Structure
 
-**Dataset:** There are three key folderes in our project. We kept all our raw and processed datasets in the subdirectories of **`data`** folder. The raw datasets are in the `data/raw` folder, structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively.
+**Dataset:** We kept all our raw and processed datasets in **`data`** directory.
 
-Furthermore, we have extracted gene related information from the Entrez API which is kept in the **`data/meta`** folder. However, we did not (get the chance to) use any external metadata like this in this project, which can be incorporated in future exploration.
+As the raw dataset is huge (and github only can handle ~100MB files), we have to download it from the source and then place it into **`data/raw`** folder.
+
+```bash
+wget https://dgl-data.s3-us-west-2.amazonaws.com/dataset/DRKG/drkg.tar.gz
+tar -zxvf drkg.tar.gz
+mv *tsv data/raw
+```
 
 **Notebook:** All the notebooks are located in the **`notebook`** folder.
 
@@ -29,16 +35,32 @@ Furthermore, we have extracted gene related information from the Entrez API whic
 pip install -r requirements.txt
 ```
 
-**Run Instructions:** We have implemented the RAG system using the instruction-tuned **`Writer/camel-5b-hf`** model which approximately requires 25GB of GPU memory for inference. Therefore a **`amperenodes`** from Cheaha with 1 A100 GPU is sufficient.
+**Run Instructions:** We have implemented the RAG system using the instruction-tuned [**`Writer/camel-5b-hf`**](https://huggingface.co/Writer/camel-5b-hf) model which approximately requires **` 25GB GPU memory`** for inference. Therefore a **`amperenodes`** from Cheaha with **`one A100 GPU`** is sufficient.
 
 > [!CAUTION]
 > Our code may not be compatible with multi-gpu nodes from Cheaha.
 
-## Exploratory Data Analysis
+## Exploratory Data Analysis (EDA)
+
+Notebook: `notebook/0_exploratory_data_analysis.ipynb`
+
+Key insights from EDA:
+
+[!img]
+
+[!img]
+
+[!img]
 
 ## Dataset Preparation
 
-https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sharing
+From the raw data located in the **`data/raw`** folder, we have transformed the dataset that can be suitable for the LLMs to understand. 
+
+Structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively.
+
+However, the full transformed dataset can be found [here](https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sharing) for future explorations.
+
+
 
 ## Retrieval Augmented Generation on Knowledge Graph
 
