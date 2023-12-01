@@ -16,7 +16,7 @@ To build **[synergized KG-LLM](https://arxiv.org/pdf/2306.08302.pdf)** that can 
 
 ## Project Structure
 
-**Dataset:** We kept all our raw and processed datasets in **`data`** directory.
+**Dataset:** We kept all our raw and processed datasets in **`data/`** directory.
 
 As the raw dataset is huge (and github only can handle ~100MB files), we have to download it from the source and then place it into **`data/raw`** folder.
 
@@ -26,7 +26,7 @@ tar -zxvf drkg.tar.gz
 mv *tsv data/raw
 ```
 
-**Notebook:** All the notebooks are located in the **`notebook`** folder.
+**Notebook:** All the notebooks are located in the **`notebook/`** folder.
 
 **Library Requirements**: All the packages and their versions are listed in `requirements.txt`. Run the following command to install all the packages altogether.
 
@@ -54,15 +54,15 @@ Key insights from EDA:
 
 ## Dataset Preparation
 
-From the raw data located in the **`data/raw`** folder, we have transformed the dataset that can be suitable for the LLMs to understand. 
+Notebook: `notebook/1_dataset_preparation.ipynb`
 
-Structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively.
-
-However, the full transformed dataset can be found [here](https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sharing) for future explorations.
-
-
+From the raw data located in the **`data/raw`** folder, we have transformed the dataset that can be suitable for the LLMs to understand. Structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively. However, the full transformed dataset can be found [here](https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sharing) for future explorations.
 
 ## Retrieval Augmented Generation on Knowledge Graph
+
+Notebook: `notebook/2_rag_for_drug_repurposing.ipynb`
+
+
 
 ### Results
 
