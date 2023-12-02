@@ -4,6 +4,10 @@
 
 Department of Computer Science, College of Arts and Sciences, University of Alabama at Birmingham, AL 35205, USA.
 
+## Overview Poster
+
+![poster](imgs/poster.png)
+
 
 ## Dataset Description
 We have used the [**Drug Repurposing Knowledge Graph (DRKG)**](https://github.com/gnn4dr/DRKG) dataset for the project. DRKG is a comprehensive biological knowledge graph relating genes, compounds, diseases, biological processes, side effects and symptoms. DRKG includes information from six existing databases including DrugBank, Hetionet, GNBR, String, IntAct and DGIdb. It includes **97,238 entities** belonging to **13 entity-types**; and **5,874,261 triplets** belonging to **107 edge-types**. These 107 edge-types show a type of interaction between one of the 17 entity-type pairs (multiple types of interactions are possible between the same entity-pair), as depicted in the figure below.
@@ -42,29 +46,36 @@ pip install -r requirements.txt
 
 ## Exploratory Data Analysis (EDA)
 
-Notebook: `notebook/0_exploratory_data_analysis.ipynb`
+**Notebook:** `notebook/0_exploratory_data_analysis.ipynb`
 
 Key insights from EDA:
 
-[!img]
+![entity-relationships](imgs/entity-relationships.png)
 
-[!img]
+![gene-gene](imgs/gene-gene.png)
 
-[!img]
+![gene-disease](imgs/gene-disease.png)
+
+![disease-gene](imgs/disease-gene.png)
 
 ## Dataset Preparation
 
-Notebook: `notebook/1_dataset_preparation.ipynb`
+**Notebook:** `notebook/1_dataset_preparation.ipynb`
 
 From the raw data located in the **`data/raw`** folder, we have transformed the dataset that can be suitable for the LLMs to understand. Structured, semi_structured and unstructured datasets are in the **`data/structured`**, **`data/semi_structured`** and **`data/unstructured`** folders respectively. However, the full transformed dataset can be found [here](https://drive.google.com/drive/folders/1p1md-1wlaTtKmRDJKJHUsHCjsK_u-XJV?usp=sharing) for future explorations.
 
+After dataset preparation, the **`data/`** directory should be like this.
+
+![dataset](imgs/data-directory.png)
+
 ## Retrieval Augmented Generation on Knowledge Graph
 
-Notebook: `notebook/2_rag_for_drug_repurposing.ipynb`
+**Notebook:** `notebook/2_rag_for_drug_repurposing.ipynb`
 
+The overview diagram of the RAG system using LLMs are depicted in the diagram below.
 
+![rag-diagram](imgs/rag-diagram.png)
 
-### Results
 
 ## Fine-tuning LLM
 
@@ -75,6 +86,8 @@ Notebook: `notebook/2_rag_for_drug_repurposing.ipynb`
 - We have not evaluated the performace of the RAG method with any systemetic evaluation metric that can measure groundedness, context relevance, answer relevance, factualization etc. To do that, we could use the [**RAG Triad method from truera**](https://truera.com/ai-quality-education/generative-ai-rags/how-to-prevent-llms-from-hallucinating/), however, it requires some OpenAI API and Huggingface API costs.
 
 - [**Sentence Window Retrieval**](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) and [**Auto-merging Retrieval**](https://docs.llamaindex.ai/en/latest/examples/retrievers/auto_merging_retriever.html) are two advanced RAG methods that can improve the results. Graph RAG can also be explored with a sub-set of the knowledge graph.
+
+- We have explored some APIs for the gene, drug or compound specific data to feed the LLMs to get better insights. However, we could only get the results out of Entrez API via biopython package *(and getting data for drugs and comound got failed)*. We think, these metadata could improve the results.
 ## Contributions
 
 - **Background Research and Problem Formulation:** Fuad Al Abir
