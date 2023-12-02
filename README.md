@@ -5,7 +5,7 @@ Department of Computer Science, College of Arts and Sciences, University of Alab
 
 ## Overview Poster
 
-![poster](imgs/poster.png)
+![poster]([imgs/poster.png](https://docs.google.com/presentation/d/1TqFsUlxZ4UDE_U7msfN02VKIN-2NIdryvsvgmEvkOTo/edit#slide=id.g1e801948b0d_0_96))
 
 
 ## Dataset Description
