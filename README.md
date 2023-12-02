@@ -6,8 +6,7 @@ Department of Computer Science, College of Arts and Sciences, University of Alab
 
 ## Overview Poster
 
-[poster](https://docs.google.com/presentation/d/1TqFsUlxZ4UDE_U7msfN02VKIN-2NIdryvsvgmEvkOTo/edit?usp=sharing)
-
+![poster](imgs/poster.jpg)
 
 ## Dataset Description
 We have used the [**Drug Repurposing Knowledge Graph (DRKG)**](https://github.com/gnn4dr/DRKG) dataset for the project. DRKG is a comprehensive biological knowledge graph relating genes, compounds, diseases, biological processes, side effects and symptoms. DRKG includes information from six existing databases including DrugBank, Hetionet, GNBR, String, IntAct and DGIdb. It includes **97,238 entities** belonging to **13 entity-types**; and **5,874,261 triplets** belonging to **107 edge-types**. These 107 edge-types show a type of interaction between one of the 17 entity-type pairs (multiple types of interactions are possible between the same entity-pair), as depicted in the figure below.
