@@ -87,6 +87,7 @@ We compared the result above with the result we got from finetuning an LLM, "dis
 I tried to find API which would help me create context so that the model might find it useful, however there are no publicly available APIs. However one could try to scrape the webpage and get the summary or relevant information regarding the compounds and drugs if they want to create a dataset suitable for LLM.
 So we converted the relations too text using 2 patterns to fine tune the model on.
 The model we chose is a general purpose model and does not have a tokenizer to suit our data. The tokenizer split the compound ids so the model couldn't exactly predict compounds which could cause the sideeffect. The model focused on English words and sometimes returned just some random numbers. Even if we use a proper tokenizer, I doubt LLM would outperform general machine learning approaches (like the one we used earlier) because the dataset is not suitable for LLM. Datasets with annotations/ comments/ running notes suit LLMs more and LLMs can outperform machine learning models by a vast margin. (This is just my speculation which I observed and is not a conclusion of any published research).
+The model can be found [here](https://drive.google.com/drive/folders/1en_fFp0YdWIivFVXAkzZZNl1D3r0X8bZ?usp=sharing) and should be downloaded and then moved to `/data/meta/` before running the `5_LLM.ipynb` notebook. (The model is around 300MB and could not be uploaded to GitHub.)
 
 ## Discussion
 
