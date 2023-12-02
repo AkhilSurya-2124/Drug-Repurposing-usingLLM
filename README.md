@@ -1,3 +1,4 @@
+# Exploring Retrieval Augmented Generation for Drug Repusposing using LLMs
 
 **Authors:** Fuad Al Abir and Akhil Goparaju
 
@@ -104,7 +105,7 @@ The model can be found [here](https://drive.google.com/drive/folders/1en_fFp0YdW
 - **Dataset Preparation:** Fuad Al Abir, Akhil Goparaju
 - **Exploration of RAG:** Fuad Al Abir
 - **Exploring Graph RAG solutions:** Akhil Goparaju, Fuad Al Abir
-- **Finding possible compounds which can cause a Side Effect** Akhil Goparaju
+- **Finding possible compounds which can cause side effects:** Akhil Goparaju
 - **Finetuning LLM:** Akhil Goparaju
 - **Readme.md:** Fuad Al Abir, Akhil Goparaju
 ## Acknowledgements
