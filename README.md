@@ -1,4 +1,3 @@
-# Exploring Retrieval Augmented Generation for Drug Repusposing using LLMs
 
 **Authors:** Fuad Al Abir and Akhil Goparaju
 
@@ -77,7 +76,17 @@ The overview diagram of the RAG system using LLMs are depicted in the diagram be
 ![rag-diagram](imgs/rag-diagram.png)
 
 
-## Fine-tuning LLM
+## Fine-tuning LLM and finding possible compounds which could cause a Side Effect.
+In this section, we tried to find untested compounds  which could cause a given side effect.
+In the dataset, we can see a side effect and compounds which cause those side effects, they arrived at these conclusions after clinical trials.
+We try to find if there any untested compounds in our dataset which could cause those side effects.
+The initial dataset is a knowledge graph describing various relations between genes, compounds, diseases etc. We chose data from HETIONET which describe compound-compound similarity and compound-sideEffect.
+We created embeddings fr all the compounds and since they are grouped, the embedding model could associate drugs based on those groupings and since any given compound(drug) can be similar to a number of other compounds, the embeddings will help us group/cluster the compounds which are similar. And then we used cosine similarity to retrive compounds which are similar to the drugs which are known to cause the given side effect.
+
+We compared the result above with the result we got from finetuning an LLM, "distilRoberta-base:. The dataset we have is not exactly suitable for an LLM. We have a lot of labels/ids with no context.
+I tried to find API which would help me create context so that the model might find it useful, however there are no publicly available APIs. However one could try to scrape the webpage and get the summary or relevant information regarding the compounds and drugs if they want to create a dataset suitable for LLM.
+So we converted the relations too text using 2 patterns to fine tune the model on.
+The model we chose is a general purpose model and does not have a tokenizer to suit our data. The tokenizer split the compound ids so the model couldn't exactly predict compounds which could cause the sideeffect. The model focused on English words and sometimes returned just some random numbers. Even if we use a proper tokenizer, I doubt LLM would outperform general machine learning approaches (like the one we used earlier) because the dataset is not suitable for LLM. Datasets with annotations/ comments/ running notes suit LLMs more and LLMs can outperform machine learning models by a vast margin. (This is just my speculation which I observed and is not a conclusion of any published research).
 
 ## Discussion
 
@@ -91,9 +100,10 @@ The overview diagram of the RAG system using LLMs are depicted in the diagram be
 ## Contributions
 
 - **Background Research and Problem Formulation:** Fuad Al Abir
-- **Dataset Preparation:** Fuad Al Abir
+- **Dataset Preparation:** Fuad Al Abir, Akhil Goparaju
 - **Exploration of RAG:** Fuad Al Abir
 - **Exploring Graph RAG solutions:** Akhil Goparaju, Fuad Al Abir
+- **Finding possible compounds which can cause a Side Effect** Akhil Goparaju
 - **Finetuning LLM:** Akhil Goparaju
 - **Readme.md:** Fuad Al Abir, Akhil Goparaju
 ## Acknowledgements
@@ -102,3 +112,4 @@ The overview diagram of the RAG system using LLMs are depicted in the diagram be
  - To the authors of DRKG from Ning Lab, OSU for this comprehensive graph dataset.
  - We have extensively used [llama-index library](https://docs.llamaindex.ai/en/stable/) for RAG experiments and learned from their youtube tutorials.
  - ❤️ for 🤗 and the open-source LLM community.
+ - Further references have been added in the notebooks wherever they are used.
