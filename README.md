@@ -4,7 +4,7 @@
 
 Department of Computer Science, College of Arts and Sciences, University of Alabama at Birmingham, AL 35205, USA.
 
-## Overview Poster
+## Project Poster
 
 ![poster](imgs/poster.jpg)
 
